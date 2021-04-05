@@ -8,11 +8,11 @@ Rather than trying to build a scrapper for that website to get the latest data (
 
 As an aside, to get the fetch code to work, I simply need a URL where it returns an object with a base and rates key, base is a string with the country name for the base currency and the rates is an object with all the currencies stored by key, except the base. So something like:
 
-data\
->|--base: "EUR",\
->|--rates:\
->>|--USD: 1.2,\
->>|--CAD: 1.3,\
+data
+>base: "EUR",\
+>rates:
+>>USD: 1.2,\
+>>CAD: 1.3,\
 >>...
 
 The data is structured such that the base exchanges 1 to whatever is under the rate (so in this case, 1 euro to 12 US dollars).
