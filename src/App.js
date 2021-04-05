@@ -19,12 +19,13 @@ function App() {
     const initCountries = ['EUR', 'USD', 'AUD', 'CAD'];
 
     // Run initial API request
-    let url = 'https://api.exchangeratesapi.io/latest';
+    let url = 'https://api.exchangeratesapi.io/v1/latest?access_key=9730e985a1a2dcac8f4ae0cbf0985e5c';
     fetch(url)
         .then(response => response.json())
         .then(data => {
           // Add in the base currency    
           let allCountries = data.rates;
+          console.log(allCountries);
           allCountries[data.base] = 1.0;
           
           // Build the toggle buttons
