@@ -90,7 +90,7 @@ function App() {
     const value = ev.target.value;
 
     // Run initial API request
-    let url = 'https://api.exchangerate.host/latest?source=ecb&base='; + value;
+    let url = 'https://api.exchangerate.host/latest?source=ecb&base=' + value;
     fetch(url)
         .then(response => response.json())
         .then(data => {
