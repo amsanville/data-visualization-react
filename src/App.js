@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  const symb = "symbols=USD,JPY,BGN,CZK,DKK,GBP,HUF,PLN,RON,SEK,CHF,ISK,NOK,HRK,RUB,TRY,AUD,BRL,CAD,CNY,HKD,IDR,ILS,INR,KRW,MXN,MYR,NZD,PHP,SGD,THB,ZAR"
+
+
   // Cached data from the API
   const [currData, setData] = useState({});
 
@@ -19,7 +22,7 @@ function App() {
     const initCountries = ['EUR', 'USD', 'AUD', 'CAD'];
 
     // Run initial API request
-    let url = 'https://api.exchangeratesapi.io/latest';
+    let url = 'https://api.exchangerate.host/latest?' + symb;
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -90,7 +93,7 @@ function App() {
     const value = ev.target.value;
 
     // Run initial API request
-    let url = 'https://api.exchangeratesapi.io/latest?base=' + value;
+    let url = 'https://api.exchangerate.host/latest?base=' + value + '&' + symb;
     fetch(url)
         .then(response => response.json())
         .then(data => {
